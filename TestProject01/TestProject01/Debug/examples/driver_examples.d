@@ -134,6 +134,9 @@ examples/driver_examples.d examples/driver_examples.o: \
  ../hal/include/hpl_init.h ../hal/include/hal_io.h \
  ../hal/include/hal_sleep.h ../hal/include/hal_timer.h \
  ../hal/utils/include/utils_list.h ../hal/include/hpl_timer.h \
+ ../hal/include/hal_usart_sync.h ../hal/include/hal_io.h \
+ ../hal/include/hpl_usart_sync.h ../hal/include/hpl_usart.h \
+ ../hal/include/hal_mac_async.h ../hal/include/hpl_mac_async.h \
  ../hal/utils/include/utils.h
 
 ../examples/driver_examples.h:
@@ -479,5 +482,17 @@ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAME53_DFP\1.0.57\include/
 ../hal/utils/include/utils_list.h:
 
 ../hal/include/hpl_timer.h:
+
+../hal/include/hal_usart_sync.h:
+
+../hal/include/hal_io.h:
+
+../hal/include/hpl_usart_sync.h:
+
+../hal/include/hpl_usart.h:
+
+../hal/include/hal_mac_async.h:
+
+../hal/include/hpl_mac_async.h:
 
 ../hal/utils/include/utils.h:
