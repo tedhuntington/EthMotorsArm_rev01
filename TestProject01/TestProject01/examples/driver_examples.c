@@ -45,5 +45,5 @@ void USART_0_example(void)
 	usart_sync_get_io_descriptor(&USART_0, &io);
 	usart_sync_enable(&USART_0);
 
-	io_write(io, (uint8_t *)"Hello World!", 12);
+	io_write(io, (uint8_t *)"Hello World!\n", 12);
 }
