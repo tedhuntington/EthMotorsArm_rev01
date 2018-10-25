@@ -123,7 +123,7 @@ int main(void)
 	netif_set_default(&LWIP_MACIF_desc);
 	mac_async_enable(&MACIF);
 
-
+	dhcp_start(&MACIF); //tph start dhcp
 
 	/* Replace with your application code */
 	while (1) {
@@ -140,6 +140,9 @@ int main(void)
 			link_up = false;
 			print_ipaddress();
 		}
+
+
+	//autoip_tmr(); //call every 100ms AUTOIP_TMR_INTERVAL msces,
 
 /*		delay_ms(1000);
 		gpio_toggle_pin_level(LED0);

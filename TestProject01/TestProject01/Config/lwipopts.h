@@ -47,7 +47,7 @@
 // <q> Enables AUTOIP
 // <id> lwip_autoip
 #ifndef LWIP_AUTOIP
-#define LWIP_AUTOIP 0
+#define LWIP_AUTOIP 1 //tph
 #endif
 
 // <q> Enables SNMP
