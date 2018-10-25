@@ -6,6 +6,9 @@ extern "C" {
 #endif
 
 #include "driver_init.h"
+#include "stdio_start.h"
+#include "eth_ipstack_main.h"
+#include "ethernet_phy_main.h"
 
 /**
  * Initializes MCU, drivers and middleware in the project

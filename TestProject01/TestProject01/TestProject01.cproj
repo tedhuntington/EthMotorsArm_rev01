@@ -249,6 +249,12 @@
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
       <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
+      <Value>../ethernet_phy</Value>
+      <Value>../lwip/lwip-1.4.0/port</Value>
+      <Value>../lwip/lwip-1.4.0/port/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
+      <Value>../stdio_redirect</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -267,6 +273,7 @@
     </ListValues>
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Tsame53j20a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
   <armgcc.assembler.general.IncludePaths>
     <ListValues>
@@ -354,6 +361,12 @@
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
       <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
+      <Value>../ethernet_phy</Value>
+      <Value>../lwip/lwip-1.4.0/port</Value>
+      <Value>../lwip/lwip-1.4.0/port/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
+      <Value>../stdio_redirect</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
@@ -373,6 +386,7 @@
     </ListValues>
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Tsame53j20a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
   <armgcc.assembler.general.IncludePaths>
     <ListValues>
@@ -464,6 +478,18 @@
     <Compile Include="Config\hpl_sercom_config.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Config\ieee8023_mii_standard_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Config\lwipopts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Config\lwip_demo_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Config\lwip_macif_config.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Config\peripheral_clk_config.h">
       <SubType>compile</SubType>
     </Compile>
@@ -482,6 +508,27 @@
     <Compile Include="driver_init.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ethernet_phy\ethernet_phy.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ethernet_phy\ethernet_phy.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ethernet_phy\ieee8023_mii_standard_register.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ethernet_phy_main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ethernet_phy_main.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="eth_ipstack_main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="eth_ipstack_main.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="examples\driver_examples.c">
       <SubType>compile</SubType>
     </Compile>
@@ -498,6 +545,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\include\hal_gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_i2c_m_sync.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\include\hal_init.h">
@@ -615,6 +665,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\src\hal_gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_i2c_m_sync.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="hal\src\hal_init.c">
@@ -863,13 +916,375 @@
     <Compile Include="hri\hri_wdt_e53.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="lwip\lwip-1.4.0\port\ethif_mac.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\port\ethif_mac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\port\include\arch\cc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\port\include\arch\perf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\api_lib.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\api_msg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\err.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\netbuf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\netdb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\netifapi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\sockets.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\api\tcpip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\def.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\dhcp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\dns.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\autoip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\icmp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\igmp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\inet.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\inet_chksum.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\ip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\ip_addr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\ipv4\ip_frag.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\mem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\memp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\netif.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\pbuf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\raw.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\asn1_dec.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\asn1_enc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\mib2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\mib_structs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\msg_in.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\snmp\msg_out.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\stats.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\sys.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\tcp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\tcp_in.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\tcp_out.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\core\udp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\autoip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\icmp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\igmp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\inet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\inet_chksum.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\ip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\ip_addr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\ipv4\lwip\ip_frag.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\api.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\api_msg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\arch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\def.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\dhcp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\dns.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\err.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\mem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\memp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\memp_std.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\netbuf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\netdb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\netif.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\netifapi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\opt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\pbuf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\raw.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\sio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\snmp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\snmp_asn1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\snmp_msg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\snmp_structs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\sockets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\stats.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\sys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\tcp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\tcpip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\tcp_impl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\lwip\udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\netif\etharp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\netif\ppp_oe.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\include\netif\slipif.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\etharp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\auth.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\auth.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\chap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\chap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\chpms.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\chpms.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\fsm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ipcp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ipcp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\lcp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\lcp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\magic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\magic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\md5.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\md5.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\pap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\pap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ppp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ppp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\pppdebug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ppp_impl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\ppp_oe.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\randm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\randm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\vj.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\ppp\vj.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lwip\lwip-1.4.0\src\netif\slipif.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_redirect\gcc\read.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_redirect\gcc\write.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_redirect\stdio_io.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_redirect\stdio_io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_start.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stdio_start.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
     <Folder Include="Device_Startup\" />
+    <Folder Include="ethernet_phy\" />
+    <Folder Include="ethernet_phy\" />
     <Folder Include="examples\" />
     <Folder Include="hal\" />
     <Folder Include="hal\include\" />
@@ -892,12 +1307,44 @@
     <Folder Include="hpl\rtc\" />
     <Folder Include="hpl\sercom\" />
     <Folder Include="hri\" />
+    <Folder Include="ethernet_phy" />
+    <Folder Include="lwip" />
+    <Folder Include="lwip\lwip-1.4.0" />
+    <Folder Include="lwip\lwip-1.4.0\port\include" />
+    <Folder Include="lwip\lwip-1.4.0\port\include\arch" />
+    <Folder Include="lwip\lwip-1.4.0\src" />
+    <Folder Include="lwip\lwip-1.4.0\port" />
+    <Folder Include="lwip\lwip-1.4.0\src\api" />
+    <Folder Include="lwip\lwip-1.4.0\src\core" />
+    <Folder Include="lwip\lwip-1.4.0\src\core\ipv4" />
+    <Folder Include="lwip\lwip-1.4.0\src\core\snmp" />
+    <Folder Include="lwip\lwip-1.4.0\src\include" />
+    <Folder Include="lwip\lwip-1.4.0\src\include\ipv4" />
+    <Folder Include="lwip\lwip-1.4.0\src\include\ipv4\lwip" />
+    <Folder Include="lwip\lwip-1.4.0\src\include\lwip" />
+    <Folder Include="lwip\lwip-1.4.0\src\include\netif" />
+    <Folder Include="lwip\lwip-1.4.0\src\netif" />
+    <Folder Include="lwip\lwip-1.4.0\src\netif\ppp" />
+    <Folder Include="stdio_redirect" />
+    <Folder Include="stdio_redirect\gcc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Device_Startup\same53j20a_flash.ld">
       <SubType>compile</SubType>
     </None>
     <None Include="Device_Startup\same53j20a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lwip\lwip-1.4.0\CHANGELOG">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lwip\lwip-1.4.0\COPYING">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lwip\lwip-1.4.0\README">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lwip\lwip-1.4.0\UPGRADING">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>

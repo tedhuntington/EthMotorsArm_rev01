@@ -25,22 +25,28 @@ extern "C" {
 
 #include <hal_usart_sync.h>
 
+#include <hal_i2c_m_sync.h>
+
 #include <hal_mac_async.h>
 
 extern struct timer_descriptor TIMER_0;
 
 extern struct usart_sync_descriptor USART_0;
+//extern struct usart_sync_descriptor TARGET_IO;  //todo use only USART_0 or TARGET_IO
 
-extern struct mac_async_descriptor ETHERNET_MAC_0;
+extern struct i2c_m_sync_desc I2C_AT24MAC;
+
+//extern struct mac_async_descriptor ETHERNET_MAC_0;
+extern struct mac_async_descriptor MACIF;
 
 void USART_0_PORT_init(void);
 void USART_0_CLOCK_init(void);
 void USART_0_init(void);
 
-void ETHERNET_MAC_0_CLOCK_init(void);
-void ETHERNET_MAC_0_init(void);
-void ETHERNET_MAC_0_PORT_init(void);
-void ETHERNET_MAC_0_example(void);
+void MACIF_CLOCK_init(void);
+void MACIF_init(void);
+void MACIF_PORT_init(void);
+void MACIF_example(void);
 
 /**
  * \brief Perform system initialization, initialize pins and clocks for

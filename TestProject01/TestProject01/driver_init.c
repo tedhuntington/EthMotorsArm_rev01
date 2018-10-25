@@ -17,7 +17,13 @@ struct timer_descriptor TIMER_0;
 
 struct usart_sync_descriptor USART_0;
 
-struct mac_async_descriptor ETHERNET_MAC_0;
+//struct usart_sync_descriptor TARGET_IO;
+
+struct i2c_m_sync_desc I2C_AT24MAC;
+
+//struct mac_async_descriptor ETHERNET_MAC_0;
+struct mac_async_descriptor MACIF;
+
 
 /**
  * \brief Timer initialization function
@@ -53,7 +59,7 @@ void USART_0_init(void)
 	USART_0_PORT_init();
 }
 
-void ETHERNET_MAC_0_PORT_init(void)
+void MACIF_PORT_init(void)
 {
 
 	gpio_set_pin_function(PB14, PINMUX_PB14L_GMAC_GMDC);
@@ -63,25 +69,39 @@ void ETHERNET_MAC_0_PORT_init(void)
 	gpio_set_pin_function(PA13, PINMUX_PA13L_GMAC_GRX0);
 
 	gpio_set_pin_function(PA12, PINMUX_PA12L_GMAC_GRX1);
+
+/*
+	gpio_set_pin_function(PC20, PINMUX_PC20L_GMAC_GRXDV);
+
+	gpio_set_pin_function(PA15, PINMUX_PA15L_GMAC_GRXER);
+
+	gpio_set_pin_function(PA18, PINMUX_PA18L_GMAC_GTX0);
+
+	gpio_set_pin_function(PA19, PINMUX_PA19L_GMAC_GTX1);
+
+	gpio_set_pin_function(PA14, PINMUX_PA14L_GMAC_GTXCK);
+
+	gpio_set_pin_function(PA17, PINMUX_PA17L_GMAC_GTXEN);
+*/
 }
 
-void ETHERNET_MAC_0_CLOCK_init(void)
+void MACIF_CLOCK_init(void)
 {
 	hri_mclk_set_AHBMASK_GMAC_bit(MCLK);
 	hri_mclk_set_APBCMASK_GMAC_bit(MCLK);
 }
 
-void ETHERNET_MAC_0_init(void)
+void MACIF_init(void)
 {
-	ETHERNET_MAC_0_CLOCK_init();
-	mac_async_init(&ETHERNET_MAC_0, GMAC);
-	ETHERNET_MAC_0_PORT_init();
+	MACIF_CLOCK_init();
+	mac_async_init(&MACIF, GMAC);
+	MACIF_PORT_init();
 }
 
-void ETHERNET_MAC_0_example(void)
+void MACIF_example(void)
 {
-	mac_async_enable(&ETHERNET_MAC_0);
-	mac_async_write(&ETHERNET_MAC_0, (uint8_t *)"Hello World!", 12);
+	mac_async_enable(&MACIF);
+	mac_async_write(&MACIF, (uint8_t *)"Hello World!", 12);
 }
 
 void system_init(void)
@@ -92,5 +112,5 @@ void system_init(void)
 
 	USART_0_init();
 
-	ETHERNET_MAC_0_init();
+	MACIF_init();
 }
