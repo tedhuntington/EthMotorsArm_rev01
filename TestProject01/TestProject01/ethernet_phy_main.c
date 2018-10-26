@@ -33,7 +33,7 @@ void MACIF_PHY_example(void)
 	/* Wait for PHY link up */
 	do {
 		rst = ethernet_phy_get_link_status(&MACIF_PHY_desc, &link_state);
-	} while (rst == ERR_NONE && link_state == true);
+	} while (rst == ERR_NONE && link_state == false); //true);
 }
 
 void ethernet_phys_init(void)

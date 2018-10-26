@@ -3,12 +3,14 @@
 #include <hal_delay.h>
 #include <driver_examples.h>
 #include <peripheral_clk_config.h>
+#include <ethernet_phy_main.h>
 #include <lwip/netif.h>
+#include <lwip/dhcp.h>
 #include <lwip/timers.h>
 #include "lwip_demo_config.h"
 #include <stdio.h>
 #include <string.h>
-
+   
 #define LED0 GPIO(GPIO_PORTB, 12)
 
 
@@ -70,7 +72,7 @@ int main(void)
 	int32_t ret;
 	u8_t    mac[6];
 
-	/* Initializes MCU, drivers and middleware */
+	/* Initializes MCU, drivers and middleware - tph - inits phy*/
 	atmel_start_init();
 	
 	gpio_set_pin_level(LED0,true);
@@ -100,6 +102,7 @@ int main(void)
 	io_write(io,OutStr,strlen(OutStr));
 
 
+	MACIF_PHY_example();
 
 	/* Read MacAddress from EEPROM */
 	read_macaddress(mac);
@@ -123,7 +126,7 @@ int main(void)
 	netif_set_default(&LWIP_MACIF_desc);
 	mac_async_enable(&MACIF);
 
-	dhcp_start(&MACIF); //tph start dhcp
+	dhcp_start(&LWIP_MACIF_desc); //tph start dhcp
 
 	/* Replace with your application code */
 	while (1) {
