@@ -5,7 +5,7 @@
 // <<< Use Configuration Wizard in Context Menu >>>
 
 
-#define LWIP_DEBUG //tph
+#define LWIP_DEBUG 1 //tph
 // <h> Basic Configuration
 
 // <q> Enable DHCP

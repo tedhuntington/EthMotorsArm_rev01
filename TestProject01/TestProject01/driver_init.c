@@ -70,6 +70,13 @@ void MACIF_PORT_init(void)
 
 	gpio_set_pin_function(PA12, PINMUX_PA12L_GMAC_GRX1);
 
+//tph below:
+	gpio_set_pin_function(PA16, PINMUX_PA16L_GMAC_GCRS);
+	gpio_set_pin_function(PA15, PINMUX_PA15L_GMAC_GRXER);
+	gpio_set_pin_function(PA14, PINMUX_PA14L_GMAC_GTXCK);
+	gpio_set_pin_function(PA17, PINMUX_PA17L_GMAC_GTXEN);
+	gpio_set_pin_function(PA18, PINMUX_PA18L_GMAC_GTX0);
+	gpio_set_pin_function(PA19, PINMUX_PA19L_GMAC_GTX1);
 /*
 	gpio_set_pin_function(PC20, PINMUX_PC20L_GMAC_GRXDV);
 
@@ -83,6 +90,7 @@ void MACIF_PORT_init(void)
 
 	gpio_set_pin_function(PA17, PINMUX_PA17L_GMAC_GTXEN);
 */
+
 }
 
 void MACIF_CLOCK_init(void)

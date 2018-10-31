@@ -49,17 +49,17 @@ static void print_ipaddress(void)
 
 static void read_macaddress(u8_t *mac)
 {
-	#if CONF_AT24MAC_ADDRESS != 0
+#if CONF_AT24MAC_ADDRESS != 0
 	uint8_t addr = 0x9A;
 	i2c_m_sync_enable(&I2C_AT24MAC);
 	i2c_m_sync_set_slaveaddr(&I2C_AT24MAC, CONF_AT24MAC_ADDRESS, I2C_M_SEVEN);
 	io_write(&(I2C_AT24MAC.io), &addr, 1);
 	io_read(&(I2C_AT24MAC.io), mac, 6);
 
-	#else
+#else
 	/* set mac to 0x11 if no EEPROM mounted */
 	memset(mac, 0x11, 6);
-	#endif
+#endif
 }
 
 
@@ -82,6 +82,8 @@ int main(void)
 
 	gpio_set_pin_function(LED0, GPIO_PIN_FUNCTION_OFF);
 
+	systick_enable();
+
 	//MACIF_example();
 	
 	//init usart
@@ -102,12 +104,11 @@ int main(void)
 	io_write(io,OutStr,strlen(OutStr));
 
 
-	MACIF_PHY_example();
+	MACIF_PHY_example();  //restarts autonegotiation
 
 	/* Read MacAddress from EEPROM */
 	read_macaddress(mac);
 
-	systick_enable();
 
 	printf("\r\nHello ATMEL World!\r\n");
 	mac_async_register_callback(&MACIF, MAC_ASYNC_RECEIVE_CB, (FUNC_PTR)mac_receive_cb);
@@ -120,7 +121,7 @@ int main(void)
 		}
 	} while (true);
 	printf("Ethernet Connection established\n");
-	LWIP_MACIF_init(mac);
+	LWIP_MACIF_init(mac);  //gets MAC address?
 	netif_set_up(&LWIP_MACIF_desc);
 
 	netif_set_default(&LWIP_MACIF_desc);
