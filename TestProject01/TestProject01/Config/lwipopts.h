@@ -701,7 +701,8 @@
 // <i> Default LWIP_DBG_OFF
 // <id> lwip_tcp_output_debug
 #ifndef TCP_OUTPUT_DEBUG
-#define TCP_OUTPUT_DEBUG LWIP_DBG_OFF
+//#define TCP_OUTPUT_DEBUG LWIP_DBG_OFF
+#define TCP_OUTPUT_DEBUG LWIP_DBG_ON
 #endif
 
 // <y> TCP RST Debug option
@@ -738,7 +739,7 @@
 // <i> Default LWIP_DBG_OFF
 // <id> lwip_tcpip_debug
 #ifndef TCPIP_DEBUG
-#define TCPIP_DEBUG LWIP_DBG_OFF
+#define TCPIP_DEBUG LWIP_DBG_ON
 #endif
 
 // <y> PPP Debug option

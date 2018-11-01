@@ -369,14 +369,13 @@ void sys_check_timeouts(void)
 				next_timeout = tmptimeout->next;
 				handler      = tmptimeout->h;
 				arg          = tmptimeout->arg;
-#if 1//tph LWIP_DEBUG_TIMERNAMES
+#if LWIP_DEBUG_TIMERNAMES
 				if (handler != NULL) {
 					LWIP_DEBUGF(TIMERS_DEBUG, ("sct calling h=%s arg=%p\n", tmptimeout->handler_name, arg));
 				}
 #endif /* LWIP_DEBUG_TIMERNAMES */
 				memp_free(MEMP_SYS_TIMEOUT, tmptimeout);
 				if (handler != NULL) {
-					LWIP_DEBUGF(TIMERS_DEBUG, ("sct calling h=%s arg=%p\n", tmptimeout->handler_name, arg)); //tph
 					handler(arg);
 				}
 			}

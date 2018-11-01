@@ -341,6 +341,7 @@
   </armgcc.compiler.symbols.DefSymbols>
   <armgcc.compiler.directories.IncludePaths>
     <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.57\include</Value>
       <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
       <Value>../Config</Value>
       <Value>../</Value>
@@ -366,7 +367,6 @@
       <Value>../lwip/lwip-1.4.0/src/include</Value>
       <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
       <Value>../stdio_redirect</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>

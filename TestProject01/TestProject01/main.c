@@ -58,7 +58,13 @@ static void read_macaddress(u8_t *mac)
 
 #else
 	/* set mac to 0x11 if no EEPROM mounted */
-	memset(mac, 0x11, 6);
+	//memset(mac, 0x11, 6);
+	mac[0]=0x74;
+	mac[1]=0x27;
+	mac[2]=0xea;
+	mac[3]=0xda;
+	mac[4]=0x89;
+	mac[5]=0x85;
 #endif
 }
 
@@ -121,7 +127,7 @@ int main(void)
 		}
 	} while (true);
 	printf("Ethernet Connection established\n");
-	LWIP_MACIF_init(mac);  //gets MAC address?
+	LWIP_MACIF_init(mac);  //
 	netif_set_up(&LWIP_MACIF_desc);
 
 	netif_set_default(&LWIP_MACIF_desc);
