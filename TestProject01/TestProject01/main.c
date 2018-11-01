@@ -16,7 +16,7 @@
 
 /* Saved total time in mS since timer was enabled */
 volatile static u32_t systick_timems;
-volatile static bool  recv_flag = false;
+volatile static bool  gmac_recv_flag = false;
 static bool           link_up   = false;
 
 u32_t sys_now(void)
@@ -37,7 +37,8 @@ void systick_enable(void)
 
 void mac_receive_cb(struct mac_async_descriptor *desc)
 {
-	recv_flag = true;
+	gmac_recv_flag = true;
+	printf("recvd\n");
 }
 static void print_ipaddress(void)
 {
@@ -73,25 +74,20 @@ static void read_macaddress(u8_t *mac)
 int main(void)
 {
 	struct io_descriptor *io;
-	int count;
+	int count;//,StartDHCP;
 	uint8_t OutStr[256];
 	int32_t ret;
 	u8_t    mac[6];
 
 	/* Initializes MCU, drivers and middleware - tph - inits phy*/
 	atmel_start_init();
-	
-	gpio_set_pin_level(LED0,true);
 
+	//initialize user gpio pins	
+	gpio_set_pin_level(LED0,true);
 	// Set pin direction to output
 	gpio_set_pin_direction(LED0, GPIO_DIRECTION_OUT);
-
 	gpio_set_pin_function(LED0, GPIO_PIN_FUNCTION_OFF);
 
-	systick_enable();
-
-	//MACIF_example();
-	
 	//init usart
 	usart_sync_get_io_descriptor(&USART_0, &io);
 	usart_sync_enable(&USART_0);
@@ -109,11 +105,15 @@ int main(void)
 	sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
 	io_write(io,OutStr,strlen(OutStr));
 
+	/* Read MacAddress from EEPROM */  //tph: currently just adding a valid public MAC address
+	read_macaddress(mac);
 
+	systick_enable();
+
+	//MACIF_example();
+	
 	MACIF_PHY_example();  //restarts autonegotiation
 
-	/* Read MacAddress from EEPROM */
-	read_macaddress(mac);
 
 
 	printf("\r\nHello ATMEL World!\r\n");
@@ -133,13 +133,21 @@ int main(void)
 	netif_set_default(&LWIP_MACIF_desc);
 	mac_async_enable(&MACIF);
 
+	//StartDHCP=1;
 	dhcp_start(&LWIP_MACIF_desc); //tph start dhcp
-
+	
 	/* Replace with your application code */
-	while (1) {
+	while (true) {
 
-		if (recv_flag) {
-			recv_flag = false;
+/*
+		if (StartDHCP) {
+			StartDHCP=0;
+			dhcp_start(&LWIP_MACIF_desc); //tph start dhcp
+		}
+*/
+
+		if (gmac_recv_flag) {
+			gmac_recv_flag = false;
 			ethernetif_mac_input(&LWIP_MACIF_desc);
 		}
 		/* LWIP timers - ARP, DHCP, TCP, etc. */
