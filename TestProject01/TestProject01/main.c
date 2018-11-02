@@ -38,7 +38,7 @@ void systick_enable(void)
 void mac_receive_cb(struct mac_async_descriptor *desc)
 {
 	gmac_recv_flag = true;
-	printf("recvd\n");
+	//printf("recvd\n");
 }
 static void print_ipaddress(void)
 {
@@ -147,6 +147,10 @@ int main(void)
 */
 
 		if (gmac_recv_flag) {
+			//printf("gmac_recd");
+			sprintf((char *)OutStr,"recvd2\n");
+			io_write(io,OutStr,strlen(OutStr));
+			
 			gmac_recv_flag = false;
 			ethernetif_mac_input(&LWIP_MACIF_desc);
 		}
@@ -159,7 +163,13 @@ int main(void)
 			print_ipaddress();
 		}
 
+		netif_poll(&LWIP_MACIF_desc);
 
+		//check interface for DHCP
+		if (LWIP_MACIF_desc.dhcp->state == DHCP_BOUND) {
+			sprintf((char *)OutStr,"DHCP bound\n");
+			io_write(io,OutStr,strlen(OutStr));			
+		}
 	//autoip_tmr(); //call every 100ms AUTOIP_TMR_INTERVAL msces,
 
 /*		delay_ms(1000);

@@ -49,7 +49,7 @@
 // <q> Enables AUTOIP
 // <id> lwip_autoip
 #ifndef LWIP_AUTOIP
-#define LWIP_AUTOIP 1 //tph
+#define LWIP_AUTOIP 1 
 #endif
 
 // <q> Enables SNMP
@@ -386,7 +386,7 @@
 // <q> Enables loop interface (127.0.0.1)
 // <id> lwip_loopif
 #ifndef LWIP_HAVE_LOOPIF
-#define LWIP_HAVE_LOOPIF 0
+#define LWIP_HAVE_LOOPIF 1 //tph 0
 #endif
 
 // <q> Enables statistics collection in lwip_stats
