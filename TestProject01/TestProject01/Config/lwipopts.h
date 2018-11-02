@@ -14,6 +14,8 @@
 #define LWIP_DHCP 1
 #endif
 
+#define LWIP_DHCP_AUTOIP_COOP 1  //tph
+
 // <q> NO RTOS
 // <id> lwip_no_sys
 #ifndef NO_SYS
