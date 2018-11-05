@@ -87,21 +87,33 @@
 // <i> Static IP address
 // <id> macif_ip
 #ifndef CONF_LWIP_MACIF_IP
+#if CONF_LWIP_MACIF_DHCP == 1
 #define CONF_LWIP_MACIF_IP "0"//"192.168.1.89"//"0" //tph "192.168.0.100"
+#else 
+#define CONF_LWIP_MACIF_IP "192.168.1.89"//"0" //tph "192.168.0.100"
+#endif
 #endif
 
 // <s> Netmask Address
 // <i> Netmask Address
 // <id> macif_netmask
 #ifndef CONF_LWIP_MACIF_NETMASK
+#if CONF_LWIP_MACIF_DHCP == 1
+#define CONF_LWIP_MACIF_NETMASK "0"
+#else
 #define CONF_LWIP_MACIF_NETMASK "255.255.255.0"
+#endif 
 #endif
 
 // <s> Gateway Address
 // <i> Static Gateway Address
 // <id> macif_gateway
 #ifndef CONF_LWIP_MACIF_GATEWAY
+#if CONF_LWIP_MACIF_DHCP == 1
 #define CONF_LWIP_MACIF_GATEWAY "0"//"192.168.1.254"  //"0" //tph "192.168.0.1"
+#else
+#define CONF_LWIP_MACIF_GATEWAY "192.168.1.254"  //"0" //tph "192.168.0.1"
+#endif
 #endif
 
 // </e>

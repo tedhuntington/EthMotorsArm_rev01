@@ -44,6 +44,50 @@ void mac_receive_cb(struct mac_async_descriptor *desc)
 	gmac_recv_flag = true;
 	//printf("recvd\n");
 }
+
+static void status_callback(struct netif *n)
+{
+	if (n->flags & NETIF_FLAG_UP) {
+		printf("Interface Up %s:\n",
+		n->flags & NETIF_FLAG_DHCP ? "(DHCP)" : "(STATIC)");
+
+#if 0 
+		printf("  IP Address: " IP_F "\n", IP_ARGS(&n->ip_addr));
+		printf("  Net Mask:   " IP_F "\n", IP_ARGS(&n->netmask));
+		printf("  Gateway:    " IP_F "\n", IP_ARGS(&n->gw));
+
+		const char *speed = "10Mb/s";
+		if (ETH->MACCR & ETH_MACCR_FES)
+		speed = "100Mb/s";
+
+		const char *duplex = "Half";
+		if (ETH->MACCR & ETH_MACCR_DM)
+		duplex = "Full";
+
+		printf("  Mode:       %s  %s Duplex\n", speed, duplex);
+#endif 
+	} else {
+		printf("Interface Down.\n");
+	}
+}
+
+static void link_callback(struct netif *n)
+{
+
+	if (n->flags & NETIF_FLAG_LINK_UP) {
+		printf("Link Up.\n");
+
+		if (n->flags & NETIF_FLAG_DHCP) {
+			printf("Restarting DHCP\n");
+			dhcp_start(n);
+		}
+
+	} else {
+		printf("Link Down.\n");
+	}
+}
+
+
 static void print_ipaddress(void)
 {
 	static char tmp_buff[16];
@@ -117,16 +161,16 @@ int main(void)
 	count=0;
 	sprintf((char *)OutStr,"**************************\n");
 	io_write(io,OutStr,strlen(OutStr));
-	sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
-	io_write(io,OutStr,strlen(OutStr));
+	//sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
+	//io_write(io,OutStr,strlen(OutStr));
 	sprintf((char *)OutStr,"EthMotorsArm_DRV8800_rev01\n");
 	io_write(io,OutStr,strlen(OutStr));
-	sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
-	io_write(io,OutStr,strlen(OutStr));
+	//sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
+	//io_write(io,OutStr,strlen(OutStr));
 	sprintf((char *)OutStr,"**************************\n");
 	io_write(io,OutStr,strlen(OutStr));
-	sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
-	io_write(io,OutStr,strlen(OutStr));
+	//sprintf((char *)OutStr,"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\n");
+	//io_write(io,OutStr,strlen(OutStr));
 
 	/* Read MacAddress from EEPROM */  //tph: currently just adding a valid public MAC address
 	read_macaddress(mac);
@@ -151,15 +195,35 @@ int main(void)
 	} while (true);
 	printf("Ethernet Connection established\n");
 	LWIP_MACIF_init(mac);  //tph: add LWIP callback for recvd input: ethernet_input()
-	netif_set_up(&LWIP_MACIF_desc);
 
+
+	//make this the default interface
 	netif_set_default(&LWIP_MACIF_desc);
+	
+	// Set callback function for netif status change 
+	netif_set_status_callback(&LWIP_MACIF_desc, status_callback);
+
+	//Set callback function for link status change
+	netif_set_link_callback(&LWIP_MACIF_desc, link_callback);
+
+		
 	mac_async_enable(&MACIF);
+	mac_async_enable_irq(&MACIF);
 
-	mac_async_enable_irq(&LWIP_MACIF_desc);
+	//bring up the network interface
+#ifdef LWIP_DHCP
+/* DHCP mode. */
+	if (ERR_OK != dhcp_start(&LWIP_MACIF_desc)) {
+		LWIP_ASSERT("ERR_OK != dhcp_start", 0);
+	}
+	printf("DHCP Started\r\n");
+#else
+	//needed for lwip 2.0: netif_set_link_up(&LWIP_MACIF_desc);
+	/* Static mode. */
+	netif_set_up(&LWIP_MACIF_desc);
+	printf("Static IP Address Assigned\r\n");
+#endif 
 
-	//StartDHCP=1;
-	dhcp_start(&LWIP_MACIF_desc); //tph start dhcp
 
 #if 0 
 	//udpecho_init(); //START UDP ECHO THREAD - requires netconn 
@@ -229,7 +293,7 @@ int main(void)
 */
 
 //	GMAC_Handler();
-	mac_async_read(&MACIF, ReadBuffer, 10);
+	//mac_async_read(&MACIF, ReadBuffer, 10);
 
 	}  //while(1)
 } //main

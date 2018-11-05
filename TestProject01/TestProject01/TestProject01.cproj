@@ -254,7 +254,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -296,7 +296,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.IncludePaths>
@@ -320,7 +320,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
 </ArmGcc>
@@ -367,7 +367,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
@@ -410,7 +410,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.assembler.general.IncludePaths>
   <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
@@ -435,7 +435,7 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
+      <Value>%24(PackRepoDir)\atmel\SAME53_DFP\1.0.57\include</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
   <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
