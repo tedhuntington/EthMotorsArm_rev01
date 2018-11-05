@@ -176,7 +176,7 @@
 // <5=> 96
 // <id> gmac_arch_ncfgr_clk
 #ifndef CONF_GMAC_NCFGR_CLK
-#define CONF_GMAC_NCFGR_CLK 4
+#define CONF_GMAC_NCFGR_CLK 3
 #endif
 
 /**
@@ -312,7 +312,7 @@
 // <i> to buffer multiple frames.
 // <id> gmac_arch_dma_cfg
 #ifndef CONF_GMAC_DMA_CFG
-#define CONF_GMAC_DMACFG 0
+#define CONF_GMAC_DMACFG 1
 #endif
 
 // <o> Fixed Burst Length for DMA Data Operations

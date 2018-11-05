@@ -28,6 +28,7 @@
  * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *
  * \asf_license_stop
+ *
  */
 
 #ifdef _SAME53_SUPC_COMPONENT_
@@ -59,6 +60,184 @@ typedef uint32_t hri_supc_intflag_reg_t;
 typedef uint32_t hri_supc_status_reg_t;
 typedef uint32_t hri_supc_vref_reg_t;
 typedef uint32_t hri_supc_vreg_reg_t;
+
+static inline bool hri_supc_get_INTFLAG_BOD33RDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33RDY) >> SUPC_INTFLAG_BOD33RDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_BOD33RDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33RDY;
+}
+
+static inline bool hri_supc_get_INTFLAG_BOD33DET_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33DET) >> SUPC_INTFLAG_BOD33DET_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_BOD33DET_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33DET;
+}
+
+static inline bool hri_supc_get_INTFLAG_B33SRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B33SRDY) >> SUPC_INTFLAG_B33SRDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_B33SRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B33SRDY;
+}
+
+static inline bool hri_supc_get_INTFLAG_BOD12RDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12RDY) >> SUPC_INTFLAG_BOD12RDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_BOD12RDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12RDY;
+}
+
+static inline bool hri_supc_get_INTFLAG_BOD12DET_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12DET) >> SUPC_INTFLAG_BOD12DET_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_BOD12DET_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12DET;
+}
+
+static inline bool hri_supc_get_INTFLAG_B12SRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B12SRDY) >> SUPC_INTFLAG_B12SRDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_B12SRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B12SRDY;
+}
+
+static inline bool hri_supc_get_INTFLAG_VREGRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VREGRDY) >> SUPC_INTFLAG_VREGRDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_VREGRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VREGRDY;
+}
+
+static inline bool hri_supc_get_INTFLAG_VCORERDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VCORERDY) >> SUPC_INTFLAG_VCORERDY_Pos;
+}
+
+static inline void hri_supc_clear_INTFLAG_VCORERDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VCORERDY;
+}
+
+static inline bool hri_supc_get_interrupt_BOD33RDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33RDY) >> SUPC_INTFLAG_BOD33RDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_BOD33RDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33RDY;
+}
+
+static inline bool hri_supc_get_interrupt_BOD33DET_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33DET) >> SUPC_INTFLAG_BOD33DET_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_BOD33DET_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33DET;
+}
+
+static inline bool hri_supc_get_interrupt_B33SRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B33SRDY) >> SUPC_INTFLAG_B33SRDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_B33SRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B33SRDY;
+}
+
+static inline bool hri_supc_get_interrupt_BOD12RDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12RDY) >> SUPC_INTFLAG_BOD12RDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_BOD12RDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12RDY;
+}
+
+static inline bool hri_supc_get_interrupt_BOD12DET_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12DET) >> SUPC_INTFLAG_BOD12DET_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_BOD12DET_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12DET;
+}
+
+static inline bool hri_supc_get_interrupt_B12SRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B12SRDY) >> SUPC_INTFLAG_B12SRDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_B12SRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B12SRDY;
+}
+
+static inline bool hri_supc_get_interrupt_VREGRDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VREGRDY) >> SUPC_INTFLAG_VREGRDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_VREGRDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VREGRDY;
+}
+
+static inline bool hri_supc_get_interrupt_VCORERDY_bit(const void *const hw)
+{
+	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VCORERDY) >> SUPC_INTFLAG_VCORERDY_Pos;
+}
+
+static inline void hri_supc_clear_interrupt_VCORERDY_bit(const void *const hw)
+{
+	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VCORERDY;
+}
+
+static inline hri_supc_intflag_reg_t hri_supc_get_INTFLAG_reg(const void *const hw, hri_supc_intflag_reg_t mask)
+{
+	uint32_t tmp;
+	tmp = ((Supc *)hw)->INTFLAG.reg;
+	tmp &= mask;
+	return tmp;
+}
+
+static inline hri_supc_intflag_reg_t hri_supc_read_INTFLAG_reg(const void *const hw)
+{
+	return ((Supc *)hw)->INTFLAG.reg;
+}
+
+static inline void hri_supc_clear_INTFLAG_reg(const void *const hw, hri_supc_intflag_reg_t mask)
+{
+	((Supc *)hw)->INTFLAG.reg = mask;
+}
 
 static inline void hri_supc_set_INTEN_BOD33RDY_bit(const void *const hw)
 {
@@ -281,182 +460,80 @@ static inline void hri_supc_clear_INTEN_reg(const void *const hw, hri_supc_inten
 	((Supc *)hw)->INTENCLR.reg = mask;
 }
 
-static inline bool hri_supc_get_INTFLAG_BOD33RDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_BOD33RDY_bit(const void *const hw)
 {
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33RDY) >> SUPC_INTFLAG_BOD33RDY_Pos;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD33RDY) >> SUPC_STATUS_BOD33RDY_Pos;
 }
 
-static inline void hri_supc_clear_INTFLAG_BOD33RDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_BOD33DET_bit(const void *const hw)
 {
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33RDY;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD33DET) >> SUPC_STATUS_BOD33DET_Pos;
 }
 
-static inline bool hri_supc_get_INTFLAG_BOD33DET_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_B33SRDY_bit(const void *const hw)
 {
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33DET) >> SUPC_INTFLAG_BOD33DET_Pos;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_B33SRDY) >> SUPC_STATUS_B33SRDY_Pos;
 }
 
-static inline void hri_supc_clear_INTFLAG_BOD33DET_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_BOD12RDY_bit(const void *const hw)
 {
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33DET;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD12RDY) >> SUPC_STATUS_BOD12RDY_Pos;
 }
 
-static inline bool hri_supc_get_INTFLAG_B33SRDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_BOD12DET_bit(const void *const hw)
 {
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B33SRDY) >> SUPC_INTFLAG_B33SRDY_Pos;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD12DET) >> SUPC_STATUS_BOD12DET_Pos;
 }
 
-static inline void hri_supc_clear_INTFLAG_B33SRDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_B12SRDY_bit(const void *const hw)
 {
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B33SRDY;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_B12SRDY) >> SUPC_STATUS_B12SRDY_Pos;
 }
 
-static inline bool hri_supc_get_INTFLAG_BOD12RDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_VREGRDY_bit(const void *const hw)
 {
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12RDY) >> SUPC_INTFLAG_BOD12RDY_Pos;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_VREGRDY) >> SUPC_STATUS_VREGRDY_Pos;
 }
 
-static inline void hri_supc_clear_INTFLAG_BOD12RDY_bit(const void *const hw)
+static inline bool hri_supc_get_STATUS_VCORERDY_bit(const void *const hw)
 {
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12RDY;
+	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_VCORERDY) >> SUPC_STATUS_VCORERDY_Pos;
 }
 
-static inline bool hri_supc_get_INTFLAG_BOD12DET_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12DET) >> SUPC_INTFLAG_BOD12DET_Pos;
-}
-
-static inline void hri_supc_clear_INTFLAG_BOD12DET_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12DET;
-}
-
-static inline bool hri_supc_get_INTFLAG_B12SRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B12SRDY) >> SUPC_INTFLAG_B12SRDY_Pos;
-}
-
-static inline void hri_supc_clear_INTFLAG_B12SRDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B12SRDY;
-}
-
-static inline bool hri_supc_get_INTFLAG_VREGRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VREGRDY) >> SUPC_INTFLAG_VREGRDY_Pos;
-}
-
-static inline void hri_supc_clear_INTFLAG_VREGRDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VREGRDY;
-}
-
-static inline bool hri_supc_get_INTFLAG_VCORERDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VCORERDY) >> SUPC_INTFLAG_VCORERDY_Pos;
-}
-
-static inline void hri_supc_clear_INTFLAG_VCORERDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VCORERDY;
-}
-
-static inline bool hri_supc_get_interrupt_BOD33RDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33RDY) >> SUPC_INTFLAG_BOD33RDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_BOD33RDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33RDY;
-}
-
-static inline bool hri_supc_get_interrupt_BOD33DET_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD33DET) >> SUPC_INTFLAG_BOD33DET_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_BOD33DET_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD33DET;
-}
-
-static inline bool hri_supc_get_interrupt_B33SRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B33SRDY) >> SUPC_INTFLAG_B33SRDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_B33SRDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B33SRDY;
-}
-
-static inline bool hri_supc_get_interrupt_BOD12RDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12RDY) >> SUPC_INTFLAG_BOD12RDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_BOD12RDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12RDY;
-}
-
-static inline bool hri_supc_get_interrupt_BOD12DET_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_BOD12DET) >> SUPC_INTFLAG_BOD12DET_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_BOD12DET_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_BOD12DET;
-}
-
-static inline bool hri_supc_get_interrupt_B12SRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_B12SRDY) >> SUPC_INTFLAG_B12SRDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_B12SRDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_B12SRDY;
-}
-
-static inline bool hri_supc_get_interrupt_VREGRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VREGRDY) >> SUPC_INTFLAG_VREGRDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_VREGRDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VREGRDY;
-}
-
-static inline bool hri_supc_get_interrupt_VCORERDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->INTFLAG.reg & SUPC_INTFLAG_VCORERDY) >> SUPC_INTFLAG_VCORERDY_Pos;
-}
-
-static inline void hri_supc_clear_interrupt_VCORERDY_bit(const void *const hw)
-{
-	((Supc *)hw)->INTFLAG.reg = SUPC_INTFLAG_VCORERDY;
-}
-
-static inline hri_supc_intflag_reg_t hri_supc_get_INTFLAG_reg(const void *const hw, hri_supc_intflag_reg_t mask)
+static inline hri_supc_status_reg_t hri_supc_get_STATUS_reg(const void *const hw, hri_supc_status_reg_t mask)
 {
 	uint32_t tmp;
-	tmp = ((Supc *)hw)->INTFLAG.reg;
+	tmp = ((Supc *)hw)->STATUS.reg;
 	tmp &= mask;
 	return tmp;
 }
 
-static inline hri_supc_intflag_reg_t hri_supc_read_INTFLAG_reg(const void *const hw)
+static inline hri_supc_status_reg_t hri_supc_read_STATUS_reg(const void *const hw)
 {
-	return ((Supc *)hw)->INTFLAG.reg;
+	return ((Supc *)hw)->STATUS.reg;
 }
 
-static inline void hri_supc_clear_INTFLAG_reg(const void *const hw, hri_supc_intflag_reg_t mask)
+static inline hri_supc_bkin_reg_t hri_supc_get_BKIN_BKIN_bf(const void *const hw, hri_supc_bkin_reg_t mask)
 {
-	((Supc *)hw)->INTFLAG.reg = mask;
+	return (((Supc *)hw)->BKIN.reg & SUPC_BKIN_BKIN(mask)) >> SUPC_BKIN_BKIN_Pos;
+}
+
+static inline hri_supc_bkin_reg_t hri_supc_read_BKIN_BKIN_bf(const void *const hw)
+{
+	return (((Supc *)hw)->BKIN.reg & SUPC_BKIN_BKIN_Msk) >> SUPC_BKIN_BKIN_Pos;
+}
+
+static inline hri_supc_bkin_reg_t hri_supc_get_BKIN_reg(const void *const hw, hri_supc_bkin_reg_t mask)
+{
+	uint32_t tmp;
+	tmp = ((Supc *)hw)->BKIN.reg;
+	tmp &= mask;
+	return tmp;
+}
+
+static inline hri_supc_bkin_reg_t hri_supc_read_BKIN_reg(const void *const hw)
+{
+	return ((Supc *)hw)->BKIN.reg;
 }
 
 static inline void hri_supc_set_BOD33_ENABLE_bit(const void *const hw)
@@ -2215,82 +2292,6 @@ static inline void hri_supc_toggle_BKOUT_reg(const void *const hw, hri_supc_bkou
 static inline hri_supc_bkout_reg_t hri_supc_read_BKOUT_reg(const void *const hw)
 {
 	return ((Supc *)hw)->BKOUT.reg;
-}
-
-static inline bool hri_supc_get_STATUS_BOD33RDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD33RDY) >> SUPC_STATUS_BOD33RDY_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_BOD33DET_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD33DET) >> SUPC_STATUS_BOD33DET_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_B33SRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_B33SRDY) >> SUPC_STATUS_B33SRDY_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_BOD12RDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD12RDY) >> SUPC_STATUS_BOD12RDY_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_BOD12DET_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_BOD12DET) >> SUPC_STATUS_BOD12DET_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_B12SRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_B12SRDY) >> SUPC_STATUS_B12SRDY_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_VREGRDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_VREGRDY) >> SUPC_STATUS_VREGRDY_Pos;
-}
-
-static inline bool hri_supc_get_STATUS_VCORERDY_bit(const void *const hw)
-{
-	return (((Supc *)hw)->STATUS.reg & SUPC_STATUS_VCORERDY) >> SUPC_STATUS_VCORERDY_Pos;
-}
-
-static inline hri_supc_status_reg_t hri_supc_get_STATUS_reg(const void *const hw, hri_supc_status_reg_t mask)
-{
-	uint32_t tmp;
-	tmp = ((Supc *)hw)->STATUS.reg;
-	tmp &= mask;
-	return tmp;
-}
-
-static inline hri_supc_status_reg_t hri_supc_read_STATUS_reg(const void *const hw)
-{
-	return ((Supc *)hw)->STATUS.reg;
-}
-
-static inline hri_supc_bkin_reg_t hri_supc_get_BKIN_BKIN_bf(const void *const hw, hri_supc_bkin_reg_t mask)
-{
-	return (((Supc *)hw)->BKIN.reg & SUPC_BKIN_BKIN(mask)) >> SUPC_BKIN_BKIN_Pos;
-}
-
-static inline hri_supc_bkin_reg_t hri_supc_read_BKIN_BKIN_bf(const void *const hw)
-{
-	return (((Supc *)hw)->BKIN.reg & SUPC_BKIN_BKIN_Msk) >> SUPC_BKIN_BKIN_Pos;
-}
-
-static inline hri_supc_bkin_reg_t hri_supc_get_BKIN_reg(const void *const hw, hri_supc_bkin_reg_t mask)
-{
-	uint32_t tmp;
-	tmp = ((Supc *)hw)->BKIN.reg;
-	tmp &= mask;
-	return tmp;
-}
-
-static inline hri_supc_bkin_reg_t hri_supc_read_BKIN_reg(const void *const hw)
-{
-	return ((Supc *)hw)->BKIN.reg;
 }
 
 #ifdef __cplusplus

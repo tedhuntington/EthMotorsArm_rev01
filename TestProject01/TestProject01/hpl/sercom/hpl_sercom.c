@@ -1011,6 +1011,7 @@ static inline int32_t _sercom_i2c_sync_analyse_flags(void *const hw, uint32_t fl
 
 			if (msg->len == 0) {
 				if (msg->flags & I2C_M_STOP) {
+					hri_sercomi2cm_clear_CTRLB_SMEN_bit(hw);
 					_sercom_i2c_send_stop(hw);
 				}
 
@@ -1220,6 +1221,7 @@ int32_t _i2c_m_async_transfer(struct _i2c_m_async_device *i2c_dev, struct _i2c_m
 
 	msg->flags |= I2C_M_BUSY;
 	i2c_dev->service.msg = *msg;
+	hri_sercomi2cm_set_CTRLB_SMEN_bit(i2c_dev->hw);
 
 	ret = _sercom_i2c_send_address(i2c_dev);
 
@@ -1497,6 +1499,7 @@ int32_t _i2c_m_sync_transfer(struct _i2c_m_sync_device *const i2c_dev, struct _i
 
 	msg->flags |= I2C_M_BUSY;
 	i2c_dev->service.msg = *msg;
+	hri_sercomi2cm_set_CTRLB_SMEN_bit(hw);
 
 	ret = _sercom_i2c_sync_send_address(i2c_dev);
 

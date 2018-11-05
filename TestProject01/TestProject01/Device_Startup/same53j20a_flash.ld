@@ -3,7 +3,7 @@
  *
  * \brief Linker script for running in internal FLASH on the SAME53J20A
  *
- * Copyright (c) 2017 Microchip Technology Inc.
+ * Copyright (c) 2018 Microchip Technology Inc.
  *
  * \asf_license_start
  *

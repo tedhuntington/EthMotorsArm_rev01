@@ -6,18 +6,22 @@
 #include <ethernet_phy_main.h>
 #include <lwip/netif.h>
 #include <lwip/dhcp.h>
+#include <lwip/udp.h>
 #include <lwip/timers.h>
 #include "lwip_demo_config.h"
 #include <stdio.h>
 #include <string.h>
+#include "udpserver.h"
    
-#define LED0 GPIO(GPIO_PORTB, 12)
+//#define LED0 GPIO(GPIO_PORTB, 12)
 
 
 /* Saved total time in mS since timer was enabled */
 volatile static u32_t systick_timems;
 volatile static bool  gmac_recv_flag = false;
 static bool           link_up   = false;
+
+struct udp_pcb *udpserver_pcb; //udp server
 
 u32_t sys_now(void)
 {
@@ -70,6 +74,24 @@ static void read_macaddress(u8_t *mac)
 }
 
 
+void udpserver_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port) 
+{
+	int i;
+
+	printf("received at %d, echoing to the same port\n",pcb->local_port);
+	//dst_ip = &(pcb->remote_ip); // this is zero always
+	if (p != NULL) {
+		    	  printf("UDP rcv %d bytes: ", (*p).len);
+		//    	  for (i = 0; i < (*p).len; ++i)
+		//			printf("%c",((char*)(*p).payload)[i]);
+		//    	printf("\n");
+		//udp_sendto(pcb, p, IP_ADDR_BROADCAST, 1234); //dest port
+
+//		udp_sendto(pcb, p, &forward_ip, fwd_port); //dest port
+		pbuf_free(p);
+	}
+}
+
 
 int main(void)
 {
@@ -78,15 +100,16 @@ int main(void)
 	uint8_t OutStr[256];
 	int32_t ret;
 	u8_t    mac[6];
+	u8_t ReadBuffer[256];
 
 	/* Initializes MCU, drivers and middleware - tph - inits phy*/
 	atmel_start_init();
 
 	//initialize user gpio pins	
-	gpio_set_pin_level(LED0,true);
+	//gpio_set_pin_level(LED0,true);
 	// Set pin direction to output
-	gpio_set_pin_direction(LED0, GPIO_DIRECTION_OUT);
-	gpio_set_pin_function(LED0, GPIO_PIN_FUNCTION_OFF);
+	//gpio_set_pin_direction(LED0, GPIO_DIRECTION_OUT);
+	//gpio_set_pin_function(LED0, GPIO_PIN_FUNCTION_OFF);
 
 	//init usart
 	usart_sync_get_io_descriptor(&USART_0, &io);
@@ -127,15 +150,39 @@ int main(void)
 		}
 	} while (true);
 	printf("Ethernet Connection established\n");
-	LWIP_MACIF_init(mac);  //
+	LWIP_MACIF_init(mac);  //tph: add LWIP callback for recvd input: ethernet_input()
 	netif_set_up(&LWIP_MACIF_desc);
 
 	netif_set_default(&LWIP_MACIF_desc);
 	mac_async_enable(&MACIF);
 
+	mac_async_enable_irq(&LWIP_MACIF_desc);
+
 	//StartDHCP=1;
 	dhcp_start(&LWIP_MACIF_desc); //tph start dhcp
+
+#if 0 
+	//udpecho_init(); //START UDP ECHO THREAD - requires netconn 
+	//start_udp();
+	udpserver_pcb = udp_new();  //create udp server
+	//IP4_ADDR(&forward_ip, 192, 168,   2, 254);
+//	udp_bind(udpserver_pcb, IP_ADDR_ANY, 53510);   //port 53510 
+	udp_bind(udpserver_pcb, &LWIP_MACIF_desc.ip_addr.addr, 53510);   //port 53510 
+	udp_recv(udpserver_pcb, udpserver_recv, NULL);  //set udpserver callback function
 	
+	const int out_buf_size=4;
+	const char buf[]="test";
+
+	//send a udp packet
+	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, out_buf_size * sizeof(char), PBUF_REF);
+	if (p!=0) {
+		p->payload = buf;
+		udp_sendto(udpserver_pcb, p, IP_ADDR_BROADCAST, 1234); //dest port
+		//udp_sendto(pcb, p, &forward_ip, fwd_port); //dest port
+		pbuf_free(p);
+	} //if (p!=0)
+#endif
+
 	/* Replace with your application code */
 	while (true) {
 
@@ -163,13 +210,13 @@ int main(void)
 			print_ipaddress();
 		}
 
-		netif_poll(&LWIP_MACIF_desc);
+		//netif_poll(&LWIP_MACIF_desc);  //tph need?
 
 		//check interface for DHCP
-		if (LWIP_MACIF_desc.dhcp->state == DHCP_BOUND) {
-			sprintf((char *)OutStr,"DHCP bound\n");
-			io_write(io,OutStr,strlen(OutStr));			
-		}
+//		if (LWIP_MACIF_desc.dhcp->state == DHCP_BOUND) {
+//			sprintf((char *)OutStr,"DHCP bound\n");
+//			io_write(io,OutStr,strlen(OutStr));			
+//		}
 	//autoip_tmr(); //call every 100ms AUTOIP_TMR_INTERVAL msces,
 
 /*		delay_ms(1000);
@@ -180,6 +227,9 @@ int main(void)
 		count++;
 		//USART_0_example();
 */
+
+//	GMAC_Handler();
+	mac_async_read(&MACIF, ReadBuffer, 10);
 
 	}  //while(1)
 } //main

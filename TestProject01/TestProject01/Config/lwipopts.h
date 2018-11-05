@@ -14,7 +14,7 @@
 #define LWIP_DHCP 1
 #endif
 
-#define LWIP_DHCP_AUTOIP_COOP 1  //tph
+//#define LWIP_DHCP_AUTOIP_COOP 1  //tph
 
 // <q> NO RTOS
 // <id> lwip_no_sys
@@ -51,7 +51,7 @@
 // <q> Enables AUTOIP
 // <id> lwip_autoip
 #ifndef LWIP_AUTOIP
-#define LWIP_AUTOIP 1 
+#define LWIP_AUTOIP 0//1 
 #endif
 
 // <q> Enables SNMP
@@ -178,7 +178,7 @@
 // <q> Enables application layer to hook into the IP layer itself
 // <id> lwip_raw
 #ifndef LWIP_RAW
-#define LWIP_RAW 0
+#define LWIP_RAW 1//0
 #endif
 
 // <q> Enable interface up/down status callback
@@ -388,7 +388,7 @@
 // <q> Enables loop interface (127.0.0.1)
 // <id> lwip_loopif
 #ifndef LWIP_HAVE_LOOPIF
-#define LWIP_HAVE_LOOPIF 1 //tph 0
+#define LWIP_HAVE_LOOPIF 0
 #endif
 
 // <q> Enables statistics collection in lwip_stats

@@ -184,6 +184,8 @@ lwip\lwip-1.4.0\src\netif\slipif.c
 
 main.c
 
+micrel.c
+
 stdio_redirect\gcc\read.c
 
 stdio_redirect\gcc\write.c
@@ -191,4 +193,6 @@ stdio_redirect\gcc\write.c
 stdio_redirect\stdio_io.c
 
 stdio_start.c
+
+udpserver.c
 

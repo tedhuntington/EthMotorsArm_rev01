@@ -53,7 +53,7 @@
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_atomic.h" IsConfig="false" Hash="dAg/XLzGqPqh12ZGWK6HLw" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_cache.h" IsConfig="false" Hash="QZIIDRbUdkb2aDtNopQSOA" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_delay.h" IsConfig="false" Hash="snalDV+S1QGquCV38zAdoA" />
-          <AcmeProjectActionInfo Action="File" Source="hal/include/hal_gpio.h" IsConfig="false" Hash="0bPvDWUqGv5qkRQRzFj7fg" />
+          <AcmeProjectActionInfo Action="File" Source="hal/include/hal_gpio.h" IsConfig="false" Hash="3mBEQ9Ix28YOArddDes83Q" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_init.h" IsConfig="false" Hash="OrYSVpF3YA5XrOBImWpdSg" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_io.h" IsConfig="false" Hash="XZRSabc39WU/0MFBLYGLvQ" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_mac_async.h" IsConfig="false" Hash="05Vpb6Mx1ktEEIKaHrgxcg" />
@@ -104,53 +104,53 @@
           <AcmeProjectActionInfo Action="File" Source="hal/utils/src/utils_event.c" IsConfig="false" Hash="sR2eRthblYjlO/jHulP6aw" />
           <AcmeProjectActionInfo Action="File" Source="hal/utils/src/utils_list.c" IsConfig="false" Hash="rW6uwWgOnnMWzJjuYzxzZw" />
           <AcmeProjectActionInfo Action="File" Source="hal/utils/src/utils_syscalls.c" IsConfig="false" Hash="NaBnZufa6Sau3+tzlyR7Kw" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_ac_e53.h" IsConfig="false" Hash="ETVp8XYViDujQwfxtnxoyg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_adc_e53.h" IsConfig="false" Hash="P3MsQvrNhJSPrroysYUH5w" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_aes_e53.h" IsConfig="false" Hash="vkSyx/V6tvSjb92W4uilmg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_ccl_e53.h" IsConfig="false" Hash="cVwhALzA+juMwebfSnAy1g" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_cmcc_e53.h" IsConfig="false" Hash="c8/2vTGxBJwV7DBSfJPZ2w" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_dac_e53.h" IsConfig="false" Hash="XN4A7rd61KKI2uDTPDx48A" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_dmac_e53.h" IsConfig="false" Hash="TegOemtRJfMu22FNowXvFg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_dsu_e53.h" IsConfig="false" Hash="qCw/Hx8FwzmS4JDkmR7xQA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_ac_e53.h" IsConfig="false" Hash="DSGVLxfzxnPNCCrjWHz0Mg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_adc_e53.h" IsConfig="false" Hash="6ktfUR4N0uVKYXKJgiKqFw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_aes_e53.h" IsConfig="false" Hash="ZzGWCzUzWK2yHb4HbTmGBw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_ccl_e53.h" IsConfig="false" Hash="0shWHAsZQBQ1CI2lqPRLyw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_cmcc_e53.h" IsConfig="false" Hash="k6gN1Gll1zC5JnlLCt6pSw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_dac_e53.h" IsConfig="false" Hash="lsttg5UUe2QPK8dCNKZULQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_dmac_e53.h" IsConfig="false" Hash="jIXQCACArzg/cMbFRUsB7Q" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_dsu_e53.h" IsConfig="false" Hash="Dn4efVwbnMDIB9JDh7PAUg" />
           <AcmeProjectActionInfo Action="File" Source="hri/hri_e53.h" IsConfig="false" Hash="iocoBMt7hW+F/6LUZC2AbA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_eic_e53.h" IsConfig="false" Hash="IWd08l2Rx11vb7FfbPftvA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_evsys_e53.h" IsConfig="false" Hash="Tk/TEo92qnXIC6L4350BuA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_freqm_e53.h" IsConfig="false" Hash="8WZGcOr+4AgCY2jElkkRFw" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_gclk_e53.h" IsConfig="false" Hash="9Fin7UxSAYqEw6LxUc9R9Q" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_gmac_e53.h" IsConfig="false" Hash="FyR+W34E7W1755cqu2wqEQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_hmatrixb_e53.h" IsConfig="false" Hash="tCREkm6AuMxsm3trjayUYQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_i2s_e53.h" IsConfig="false" Hash="auiwEXRkklUiwOv4ELwNyA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_icm_e53.h" IsConfig="false" Hash="mVJdtLhXIRrYlmFCcWN4Vw" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_mclk_e53.h" IsConfig="false" Hash="ofYedb7Qai2gPVWKrwD7qg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_mpu_e53.h" IsConfig="false" Hash="76PQA0N6XkAtAlfTmcPfzQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_nvic_e53.h" IsConfig="false" Hash="bVYpPqVHTKkuIVuhzY3hPg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_nvmctrl_e53.h" IsConfig="false" Hash="vFy/j6jLx2IyRvycAISINA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_osc32kctrl_e53.h" IsConfig="false" Hash="iUlCWlsNeKiEflsn9EiynA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_oscctrl_e53.h" IsConfig="false" Hash="TxKJj1SJ/8dN02DUoF0BjA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_pac_e53.h" IsConfig="false" Hash="goULkVLMlP0bwKHIbdtAeQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_pcc_e53.h" IsConfig="false" Hash="HY9uqC1lmI5fr0ajv2ojtw" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_pdec_e53.h" IsConfig="false" Hash="JGVZPqoKekkM30pa5uJCJQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_pm_e53.h" IsConfig="false" Hash="1ifVuGA0zDXp6d3agfyYng" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_port_e53.h" IsConfig="false" Hash="EGBRIBzO269myF135YnPcQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_qspi_e53.h" IsConfig="false" Hash="oY4H90n1IhPMxULpIVjAXA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_ramecc_e53.h" IsConfig="false" Hash="59KxDhDh3rSmbfOVKEKohg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_rstc_e53.h" IsConfig="false" Hash="tlu9+XFpyxU2ltKGQ8AYHA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_rtc_e53.h" IsConfig="false" Hash="lmUeUD6Nqw+g761JgxvsYg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_sdhc_e53.h" IsConfig="false" Hash="FZdcEJUlIoFlCZqhWJBBNg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_sercom_e53.h" IsConfig="false" Hash="BIFoySdyMX6z+EHW2rgkOg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_supc_e53.h" IsConfig="false" Hash="tL9UUoZIw1V01lGD+5RaHQ" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_systemcontrol_e53.h" IsConfig="false" Hash="idvU+pVjLg+VuclwBPcocA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_systick_e53.h" IsConfig="false" Hash="JPHVNqsFPuF8yW7ZLJng/Q" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_tc_e53.h" IsConfig="false" Hash="Jb91wbsqjX7trgeVU/j5cg" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_tcc_e53.h" IsConfig="false" Hash="knmfrFIFT6Cm+65cxDV8KA" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_trng_e53.h" IsConfig="false" Hash="MiFeQ3aSMFCAazaECaHc1Q" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_usb_e53.h" IsConfig="false" Hash="vhVv2HM3jhFC8OVm/QjYFw" />
-          <AcmeProjectActionInfo Action="File" Source="hri/hri_wdt_e53.h" IsConfig="false" Hash="/ahhVXAjrQciTvu5e+EKfg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_eic_e53.h" IsConfig="false" Hash="Trc8CyE9IOim5v6NOljEMQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_evsys_e53.h" IsConfig="false" Hash="xoFqlHeK/iLp4a+lSvdqSw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_freqm_e53.h" IsConfig="false" Hash="fc14L8pX7g8MBiZQJTHRnw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_gclk_e53.h" IsConfig="false" Hash="yOnxlazlfcDTFAz5jMm4FA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_gmac_e53.h" IsConfig="false" Hash="iiperhCT49/xUymwkBSAqg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_hmatrixb_e53.h" IsConfig="false" Hash="VUTjARCVxQhfcMXiQHnVsg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_i2s_e53.h" IsConfig="false" Hash="t7RpCgLJt9zuxh/iiQiPbQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_icm_e53.h" IsConfig="false" Hash="5C8jufOAl57fUgcKAfNW8w" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_mclk_e53.h" IsConfig="false" Hash="x1DRVRCpAZKWwHvSgu+LoQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_mpu_e53.h" IsConfig="false" Hash="QWh1bYAicEa67WWRHn5FMg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_nvic_e53.h" IsConfig="false" Hash="Wzn18VIKGQnbW9oEjl+EPA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_nvmctrl_e53.h" IsConfig="false" Hash="w0YrmXLgS/9hCt9AfHTIYQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_osc32kctrl_e53.h" IsConfig="false" Hash="EhwYOAyPkBxA1liJfOvY9w" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_oscctrl_e53.h" IsConfig="false" Hash="fWJ4L/1kCXuBESnq81TFCw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_pac_e53.h" IsConfig="false" Hash="AAffkqkyA+Lx5Kc7UqLk4A" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_pcc_e53.h" IsConfig="false" Hash="f0EmuFSeyO6x2b1C1OeEAA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_pdec_e53.h" IsConfig="false" Hash="fUIhhTdLxgd3pNj0eO2tXg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_pm_e53.h" IsConfig="false" Hash="k8uQKEqxfVRp/TlO00WQJA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_port_e53.h" IsConfig="false" Hash="rJijC9t+8MAP4Z68PnfmWA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_qspi_e53.h" IsConfig="false" Hash="qt3OBSA5jLGXhUi8wz4xDQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_ramecc_e53.h" IsConfig="false" Hash="Pcg07Yw487HHMhK21cLung" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_rstc_e53.h" IsConfig="false" Hash="rK9/sczE9AQ9GrzKLydExQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_rtc_e53.h" IsConfig="false" Hash="PABom1YyrlektSM0yN42Kg" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_sdhc_e53.h" IsConfig="false" Hash="zHazuBWt38/2Qy857T6WQQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_sercom_e53.h" IsConfig="false" Hash="ESmTP+0bz7cmdM6ITJ4UWQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_supc_e53.h" IsConfig="false" Hash="tNlc4nULgakYJupemJRVuw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_systemcontrol_e53.h" IsConfig="false" Hash="QzUwvTuIom1AJHAotbTQzw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_systick_e53.h" IsConfig="false" Hash="2zyh9EFuAoRyF7PLSlqlkQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_tc_e53.h" IsConfig="false" Hash="UgXz8iK2jOhXYPFO6ZtvAA" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_tcc_e53.h" IsConfig="false" Hash="X7D1DcJMzkV7rri2XBg7/Q" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_trng_e53.h" IsConfig="false" Hash="LFFV0xEP4qADM3o8zM9tvQ" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_usb_e53.h" IsConfig="false" Hash="ffq9JLpN6ynhT46eXQlHUw" />
+          <AcmeProjectActionInfo Action="File" Source="hri/hri_wdt_e53.h" IsConfig="false" Hash="rIdQKJ1OQUw/E2Su+i5IWA" />
           <AcmeProjectActionInfo Action="File" Source="main.c" IsConfig="false" Hash="k0AH7j+BrmdFhBPzCCMptA" />
           <AcmeProjectActionInfo Action="File" Source="driver_init.c" IsConfig="false" Hash="w2PYUawe6FQlAFG5m6S4WQ" />
           <AcmeProjectActionInfo Action="File" Source="driver_init.h" IsConfig="false" Hash="+KNbS3IUNZRzqCXMF/iAbg" />
-          <AcmeProjectActionInfo Action="File" Source="atmel_start_pins.h" IsConfig="false" Hash="RIBMaYJs6F4C4brJ9kZ1bA" />
-          <AcmeProjectActionInfo Action="File" Source="examples/driver_examples.h" IsConfig="false" Hash="0B6gd5Q/A2OgvCVsrqlpgg" />
+          <AcmeProjectActionInfo Action="File" Source="atmel_start_pins.h" IsConfig="false" Hash="z5pwsoWyeKrvQoTQeZgzKA" />
+          <AcmeProjectActionInfo Action="File" Source="examples/driver_examples.h" IsConfig="false" Hash="dFHM3SzD3ziSfUFo59KvQw" />
           <AcmeProjectActionInfo Action="File" Source="examples/driver_examples.c" IsConfig="false" Hash="wW7PheCcDqWB/ZhVwDvoVQ" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_timer.h" IsConfig="false" Hash="5pZVthtMl40VMvofOld2ng" />
           <AcmeProjectActionInfo Action="File" Source="hal/include/hal_usart_sync.h" IsConfig="false" Hash="ZzIGSRyjZuxRzFAtNNt7sw" />
@@ -180,18 +180,18 @@
           <AcmeProjectActionInfo Action="File" Source="hpl/ramecc/hpl_ramecc.c" IsConfig="false" Hash="pMdmwVWBg16VG8HOwA3DPw" />
           <AcmeProjectActionInfo Action="File" Source="hpl/rtc/hpl_rtc.c" IsConfig="false" Hash="0HnfU5UF0bwE2z+JQr2hfw" />
           <AcmeProjectActionInfo Action="File" Source="hpl/rtc/hpl_rtc_base.h" IsConfig="false" Hash="6MZP9mg3QA6lytcm00LePQ" />
-          <AcmeProjectActionInfo Action="File" Source="hpl/sercom/hpl_sercom.c" IsConfig="false" Hash="HK/Q357+6W0ozHuPDuWEpA" />
+          <AcmeProjectActionInfo Action="File" Source="hpl/sercom/hpl_sercom.c" IsConfig="false" Hash="5GoEOUteiTdrJADeMIjgVA" />
           <AcmeProjectActionInfo Action="File" Source="atmel_start.h" IsConfig="false" Hash="9RBG5E2ViQiSP2Gn4/FGpA" />
           <AcmeProjectActionInfo Action="File" Source="atmel_start.c" IsConfig="false" Hash="1RHIE7zTtYK4DURNPUqF9w" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_cmcc_config.h" IsConfig="true" Hash="bmtxQ8rLloaRtAo2HeXZRQ" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_dmac_config.h" IsConfig="true" Hash="mNec32O7w53e4vDmQlvjCA" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_gclk_config.h" IsConfig="true" Hash="qFfXbIiu7Skw/l5fYsEt7Q" />
-          <AcmeProjectActionInfo Action="File" Source="config/hpl_gmac_config.h" IsConfig="true" Hash="3OJ2VnkFAoAEfiENYO7XTg" />
+          <AcmeProjectActionInfo Action="File" Source="config/hpl_gmac_config.h" IsConfig="true" Hash="ikqyXeGfu14tpIPsHnuO7A" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_mclk_config.h" IsConfig="true" Hash="pxBzoQXTG66x4dbzVzxteg" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_osc32kctrl_config.h" IsConfig="true" Hash="3MDT7yLwmiaUjP/WI1+yVw" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_oscctrl_config.h" IsConfig="true" Hash="HO1Z9YoEymQ1BPYP8UeQOQ" />
           <AcmeProjectActionInfo Action="File" Source="config/hpl_rtc_config.h" IsConfig="true" Hash="9Fe6jPSvaDcH9Ejz/4s7XA" />
-          <AcmeProjectActionInfo Action="File" Source="config/hpl_sercom_config.h" IsConfig="true" Hash="vZ+rzUqKxbXdB3Rsfy77sw" />
+          <AcmeProjectActionInfo Action="File" Source="config/hpl_sercom_config.h" IsConfig="true" Hash="+vQrvbPTJ4xEPlPgsWPb0w" />
           <AcmeProjectActionInfo Action="File" Source="config/peripheral_clk_config.h" IsConfig="true" Hash="0iZKvZUJ/DATJPPzeKRzAw" />
         </AcmeActionInfos>
         <NonsecureFilesInfo />
@@ -230,6 +230,12 @@
   <armgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>../ethernet_phy</Value>
+      <Value>../lwip/lwip-1.4.0/port</Value>
+      <Value>../lwip/lwip-1.4.0/port/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
+      <Value>../stdio_redirect</Value>
       <Value>../Config</Value>
       <Value>../</Value>
       <Value>../examples</Value>
@@ -248,12 +254,6 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>../ethernet_phy</Value>
-      <Value>../lwip/lwip-1.4.0/port</Value>
-      <Value>../lwip/lwip-1.4.0/port/include</Value>
-      <Value>../lwip/lwip-1.4.0/src/include</Value>
-      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
-      <Value>../stdio_redirect</Value>
       <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
@@ -343,6 +343,12 @@
     <ListValues>
       <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.57\include</Value>
       <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>../ethernet_phy</Value>
+      <Value>../lwip/lwip-1.4.0/port</Value>
+      <Value>../lwip/lwip-1.4.0/port/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include</Value>
+      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
+      <Value>../stdio_redirect</Value>
       <Value>../Config</Value>
       <Value>../</Value>
       <Value>../examples</Value>
@@ -361,12 +367,6 @@
       <Value>../hpl/rtc</Value>
       <Value>../hpl/sercom</Value>
       <Value>../hri</Value>
-      <Value>../ethernet_phy</Value>
-      <Value>../lwip/lwip-1.4.0/port</Value>
-      <Value>../lwip/lwip-1.4.0/port/include</Value>
-      <Value>../lwip/lwip-1.4.0/src/include</Value>
-      <Value>../lwip/lwip-1.4.0/src/include/ipv4</Value>
-      <Value>../stdio_redirect</Value>
       <Value>%24(PackRepoDir)\Atmel\SAME53_DFP\1.0.75\include</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
@@ -1262,6 +1262,9 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="micrel.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="stdio_redirect\gcc\read.c">
       <SubType>compile</SubType>
     </Compile>
@@ -1280,6 +1283,12 @@
     <Compile Include="stdio_start.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="udpserver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="udpserver.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
@@ -1290,6 +1299,7 @@
     <Folder Include="hal\" />
     <Folder Include="hal\include\" />
     <Folder Include="hal\src\" />
+    <Folder Include="ethernet_phy" />
     <Folder Include="hal\utils\" />
     <Folder Include="hal\utils\include\" />
     <Folder Include="hal\utils\src\" />
@@ -1308,7 +1318,6 @@
     <Folder Include="hpl\rtc\" />
     <Folder Include="hpl\sercom\" />
     <Folder Include="hri\" />
-    <Folder Include="ethernet_phy" />
     <Folder Include="lwip" />
     <Folder Include="lwip\lwip-1.4.0" />
     <Folder Include="lwip\lwip-1.4.0\port\include" />
