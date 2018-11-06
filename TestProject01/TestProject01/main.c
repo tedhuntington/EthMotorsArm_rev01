@@ -298,7 +298,7 @@ int main(void)
 	//mac_async_read(&MACIF, ReadBuffer, 10);
 	volatile uint32_t imr;
 	//read GMAC interrupt mask register to confirm which interrupts are enabled (=0, RCOMP: receive complete= bit1)
-	imr=hri_gmac_read_IMR_reg(&MACIF)
+	imr=hri_gmac_read_IMR_reg(&MACIF);
 
 	}  //while(1)
 } //main
