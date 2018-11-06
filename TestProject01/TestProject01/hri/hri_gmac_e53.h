@@ -345,7 +345,7 @@ static inline void hri_gmac_clear_IMR_MFS_bit(const void *const hw)
 
 static inline void hri_gmac_set_IMR_RCOMP_bit(const void *const hw)
 {
-	((Gmac *)hw)->IER.reg = GMAC_IMR_RCOMP;
+	((Gmac *)hw)->IER.reg = GMAC_IMR_RCOMP; //tph: probably should use GMAC_IER_RCOMP, but they are the same
 }
 
 static inline bool hri_gmac_get_IMR_RCOMP_bit(const void *const hw)

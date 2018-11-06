@@ -26,7 +26,7 @@
 // <i> Specification.
 // <id> ieee8023_mii_control_reg0_setting
 #ifndef CONF_MACIF_PHY_IEEE8023_MII_CONTROL_REG0_SETTING
-#define CONF_MACIF_PHY_IEEE8023_MII_CONTROL_REG0_SETTING 0
+#define CONF_MACIF_PHY_IEEE8023_MII_CONTROL_REG0_SETTING 1//tph- enables management port- MPE in NCR network control register  0
 #endif
 
 // <q> Loopback Enable

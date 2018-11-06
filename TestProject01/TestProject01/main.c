@@ -296,9 +296,15 @@ int main(void)
 
 //	GMAC_Handler();
 	//mac_async_read(&MACIF, ReadBuffer, 10);
-	volatile uint32_t imr;
+	volatile uint32_t imr,isr,ncr,ncfgr,ur,rsr;
 	//read GMAC interrupt mask register to confirm which interrupts are enabled (=0, RCOMP: receive complete= bit1)
-	imr=hri_gmac_read_IMR_reg(&MACIF);
+	imr=hri_gmac_read_IMR_reg(&MACIF);  //interrupt mask register
+	isr=hri_gmac_read_ISR_reg(&MACIF);  //interrupt status register
+	ncr=hri_gmac_read_NCR_reg(&MACIF);  //network control register
+	ncfgr=hri_gmac_read_NCFGR_reg(&MACIF);  //network configuration register
+	ur=hri_gmac_read_UR_reg(&MACIF);  //user register - bit 0=0 for RMII
+	rsr=hri_gmac_read_RSR_reg(&MACIF);  //user register - bit 0=0 for RMII
+	//could test loop back send and receive: set LBL bit in NCR
 
 	}  //while(1)
 } //main
