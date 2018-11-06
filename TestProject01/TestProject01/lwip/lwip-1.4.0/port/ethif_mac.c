@@ -54,7 +54,7 @@ void mac_low_level_init(struct netif *netif)
 
 	/* set MAC hardware address */
 	memcpy(filter.mac, netif->hwaddr, NETIF_MAX_HWADDR_LEN);
-	filter.tid_enable = false;
+	filter.tid_enable = true; //tph false;
 	mac_async_set_filter(mac, 0, &filter);
 }
 

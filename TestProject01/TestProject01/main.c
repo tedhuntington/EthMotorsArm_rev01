@@ -22,6 +22,8 @@ volatile static bool  gmac_recv_flag = false;
 static bool           link_up   = false;
 
 struct udp_pcb *udpserver_pcb; //udp server
+extern struct mac_async_descriptor MACIF;
+
 
 u32_t sys_now(void)
 {
@@ -294,6 +296,9 @@ int main(void)
 
 //	GMAC_Handler();
 	//mac_async_read(&MACIF, ReadBuffer, 10);
+	volatile uint32_t imr;
+	//read GMAC interrupt mask register to confirm which interrupts are enabled (=0, RCOMP: receive complete= bit1)
+	imr=hri_gmac_read_IMR_reg(&MACIF)
 
 	}  //while(1)
 } //main

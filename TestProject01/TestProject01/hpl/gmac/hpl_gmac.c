@@ -449,7 +449,8 @@ int32_t _mac_async_register_callback(struct _mac_async_device *const dev, const 
 		if (func) {
 			hri_gmac_set_IMR_RCOMP_bit(dev->hw);
 		} else {
-			hri_gmac_set_IMR_RCOMP_bit(dev->hw);
+			//hri_gmac_set_IMR_RCOMP_bit(dev->hw);
+			hri_gmac_clear_IMR_RCOMP_bit(dev->hw);
 		}
 		break;
 	default:
