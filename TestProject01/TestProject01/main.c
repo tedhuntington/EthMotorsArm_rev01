@@ -248,12 +248,12 @@ int main(void)
 		pbuf_free(p);
 	} //if (p!=0)
 #endif
-
+/*
 	hri_gmac_write_NCR_reg(GMAC,GMAC_NCR_MPE|GMAC_NCR_RXEN|GMAC_NCR_TXEN);  //network control register - enable write read and management port
 	hri_gmac_write_NCFGR_reg(GMAC,0xc0000|GMAC_NCFGR_FD|GMAC_NCFGR_SPD);  //network configuration register- /48, FD, SPD
 	//hri_gmac_write_IMR_reg(&MACIF,GMAC_IMR_RCOMP);  //network configuration register- /48, FD, SPD
 	hri_gmac_write_IMR_reg(GMAC,GMAC_IMR_RCOMP|GMAC_IMR_ROVR|GMAC_IMR_PFNZ|GMAC_IMR_PTZ);  //network configuration register- /48, FD, SPD
-	
+*/
 	//enable interrupts
 	//hri_nvic_write_ISPR_reg(&MACIF,)
 	NVIC_EnableIRQ(GMAC_IRQn);

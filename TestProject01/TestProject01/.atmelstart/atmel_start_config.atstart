@@ -198,7 +198,7 @@ drivers:
       dmac_dstinc_7: false
       dmac_dstinc_8: false
       dmac_dstinc_9: false
-      dmac_enable: false
+      dmac_enable: true
       dmac_evact_0: No action
       dmac_evact_1: No action
       dmac_evact_10: No action
@@ -943,9 +943,9 @@ drivers:
       gmac_arch_dma_cfg: true
       gmac_arch_ipgs_fl_div: 1
       gmac_arch_ipgs_fl_mul: 1
-      gmac_arch_mii_cfg: false
+      gmac_arch_mii_cfg: true
       gmac_arch_ncfgr_caf: false
-      gmac_arch_ncfgr_clk: '48'
+      gmac_arch_ncfgr_clk: '64'
       gmac_arch_ncfgr_dcpf: false
       gmac_arch_ncfgr_df: true
       gmac_arch_ncfgr_dnvlan: false
@@ -967,10 +967,10 @@ drivers:
       gmac_arch_ncfgr_spd: true
       gmac_arch_ncfgr_unihen: false
       gmac_arch_ncr_bp: false
-      gmac_arch_ncr_enpbpr: false
+      gmac_arch_ncr_enpbpr: true
       gmac_arch_ncr_lbl: false
       gmac_arch_ncr_mpe: true
-      gmac_arch_ncr_txpbpf: false
+      gmac_arch_ncr_txpbpf: true
       gmac_arch_ncr_westat: false
       gmac_arch_rpsf_en: false
       gmac_arch_rpsf_wm: 100
