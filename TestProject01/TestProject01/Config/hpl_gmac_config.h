@@ -86,7 +86,7 @@
 // <i> All valid frames will be accepted
 // <id> gmac_arch_ncfgr_caf
 #ifndef CONF_GMAC_NCFGR_CAF
-#define CONF_GMAC_NCFGR_CAF 1//tph0
+#define CONF_GMAC_NCFGR_CAF 0//1//tph0
 #endif
 
 // <q> No broadcast
@@ -414,7 +414,7 @@
 // <i> Number of Receive Buffer Descriptor
 // <id> gmac_arch_rxdescr_num
 #ifndef CONF_GMAC_RXDESCR_NUM
-#define CONF_GMAC_RXDESCR_NUM 16
+#define CONF_GMAC_RXDESCR_NUM 32 //tph16
 #endif
 
 // <o> Byte size of Transmit Buffer <64-10240>
