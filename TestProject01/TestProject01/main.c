@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "udpserver.h"
+#include "cmsis_gcc.h"  //for __enable_irq
    
 //#define LED0 GPIO(GPIO_PORTB, 12)
 
@@ -210,7 +211,11 @@ int main(void)
 
 		
 	mac_async_enable(&MACIF);
+
+	//enable the GMAC interrupt
 	mac_async_enable_irq(&MACIF);
+
+
 
 	//bring up the network interface
 #ifdef LWIP_DHCP
@@ -259,6 +264,9 @@ int main(void)
 	NVIC_EnableIRQ(GMAC_IRQn);
 	uint32_t IntStatus;
 	IntStatus=__NVIC_GetEnableIRQ(GMAC_IRQn);
+	//enable interrupts (global)
+	__enable_irq();
+	
 	/* Replace with your application code */
 	while (true) {
 
