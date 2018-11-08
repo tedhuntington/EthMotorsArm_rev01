@@ -212,8 +212,11 @@ int main(void)
 		
 	mac_async_enable(&MACIF);
 
-	//enable the GMAC interrupt
-	mac_async_enable_irq(&MACIF);
+//	//enable interrupts (global)
+//__enable_irq();
+
+//enable the GMAC interrupt
+//mac_async_enable_irq(&MACIF);
 
 
 
@@ -253,19 +256,30 @@ int main(void)
 		pbuf_free(p);
 	} //if (p!=0)
 #endif
-/*
+
 	hri_gmac_write_NCR_reg(GMAC,GMAC_NCR_MPE|GMAC_NCR_RXEN|GMAC_NCR_TXEN);  //network control register - enable write read and management port
-	hri_gmac_write_NCFGR_reg(GMAC,0xc0000|GMAC_NCFGR_FD|GMAC_NCFGR_SPD);  //network configuration register- /48, FD, SPD
+	//hri_gmac_write_NCFGR_reg(GMAC,0xc0000|GMAC_NCFGR_FD|GMAC_NCFGR_SPD);  //network configuration register- /48, FD, SPD
+	hri_gmac_write_NCFGR_reg(GMAC,0xc0000|GMAC_NCFGR_FD|GMAC_NCFGR_CAF|GMAC_NCFGR_IRXER|GMAC_NCFGR_IRXFCS|GMAC_NCFGR_SPD);  //network configuration register- /48, FD, SPD
 	//hri_gmac_write_IMR_reg(&MACIF,GMAC_IMR_RCOMP);  //network configuration register- /48, FD, SPD
-	hri_gmac_write_IMR_reg(GMAC,GMAC_IMR_RCOMP|GMAC_IMR_ROVR|GMAC_IMR_PFNZ|GMAC_IMR_PTZ);  //network configuration register- /48, FD, SPD
-*/
-	//enable interrupts
-	//hri_nvic_write_ISPR_reg(&MACIF,)
-	NVIC_EnableIRQ(GMAC_IRQn);
-	uint32_t IntStatus;
-	IntStatus=__NVIC_GetEnableIRQ(GMAC_IRQn);
+	hri_gmac_write_IMR_reg(GMAC,GMAC_IMR_RCOMP|GMAC_IMR_RXUBR|GMAC_IMR_TCOMP|GMAC_IMR_ROVR|GMAC_IMR_PFNZ|GMAC_IMR_PTZ);  //interrupt mask register
+	//hri_gmac_write_IER_reg(GMAC,GMAC_IER_RCOMP|GMAC_IER_TCOMP|GMAC_IER_ROVR|GMAC_IER_PFNZ|GMAC_IER_PTZ);  //interrupt enable register
+	((Gmac *)GMAC)->IER.reg = GMAC_IER_RCOMP|GMAC_IER_RXUBR|GMAC_IER_TCOMP|GMAC_IER_ROVR|GMAC_IER_PFNZ|GMAC_IER_PTZ; 
+
+
 	//enable interrupts (global)
 	__enable_irq();
+
+	//enable the GMAC interrupt
+	mac_async_enable_irq(&MACIF);
+
+	//enable interrupts
+	//hri_nvic_write_ISPR_reg(&MACIF,)
+//	NVIC_EnableIRQ(GMAC_IRQn);
+//	uint32_t IntStatus;
+//	IntStatus=__NVIC_GetEnableIRQ(GMAC_IRQn);
+
+	//enable interrupts (global)
+//	__enable_irq();
 	
 	/* Replace with your application code */
 	while (true) {
@@ -316,14 +330,13 @@ int main(void)
 	//mac_async_read(&MACIF, ReadBuffer, 10);
 	volatile uint32_t imr,isr,ncr,ncfgr,ur,rsr,dcfgr;
 	//read GMAC interrupt mask register to confirm which interrupts are enabled (=0, RCOMP: receive complete= bit1)
-	imr=hri_gmac_read_IMR_reg(&MACIF);  //interrupt mask register
-	isr=hri_gmac_read_ISR_reg(&MACIF);  //interrupt status register
-	ncr=hri_gmac_read_NCR_reg(&MACIF);  //network control register
-	ncfgr=hri_gmac_read_NCFGR_reg(&MACIF);  //network configuration register
-	ur=hri_gmac_read_UR_reg(&MACIF);  //user register - bit 0=0 for RMII
-	dcfgr=hri_gmac_read_DCFGR_reg(&MACIF);  //DMA Configuration register 
-
-	rsr=hri_gmac_read_RSR_reg(&MACIF.dev.hw);  //user register - bit 0=0 for RMII
+	imr=hri_gmac_read_IMR_reg(GMAC);  //interrupt mask register
+	isr=hri_gmac_read_ISR_reg(GMAC);  //interrupt status register
+	ncr=hri_gmac_read_NCR_reg(GMAC);  //network control register
+	ncfgr=hri_gmac_read_NCFGR_reg(GMAC);  //network configuration register
+	ur=hri_gmac_read_UR_reg(GMAC);  //user register - bit 0=0 for RMII
+	dcfgr=hri_gmac_read_DCFGR_reg(GMAC);  //DMA Configuration register 
+	rsr=hri_gmac_read_RSR_reg(GMAC);  //user register - bit 0=0 for RMII
 	//could test loop back send and receive: set LBL bit in NCR
 
 	}  //while(1)

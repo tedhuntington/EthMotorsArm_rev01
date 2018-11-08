@@ -160,7 +160,7 @@ void GMAC_Handler(void)
 
 	/* Frame transmited */
 	if (tsr & GMAC_TSR_TXCOMP) {
-		hri_gmac_write_TSR_reg(_gmac_dev->hw, tsr);
+		hri_gmac_write_TSR_reg(_gmac_dev->hw, tsr); // clear bit, write GMAC_TSR_TXCOMP and UBR
 		if ((_txbuf_descrs[_txbuf_index].status.bm.used) && (_gmac_dev->cb.transmited != NULL)) {
 			_gmac_dev->cb.transmited(_gmac_dev);
 		}
@@ -168,11 +168,12 @@ void GMAC_Handler(void)
 
 	/* Frame received */
 	if (rsr & GMAC_RSR_REC) {
+		hri_gmac_write_RSR_reg(_gmac_dev->hw, GMAC_RSR_REC);  //tph moved here
 		if (_gmac_dev->cb.received != NULL) {
 			_gmac_dev->cb.received(_gmac_dev);
 		}
 	}
-	hri_gmac_write_RSR_reg(_gmac_dev->hw, rsr);
+	//hri_gmac_write_RSR_reg(_gmac_dev->hw, rsr);
 }
 
 int32_t _mac_async_init(struct _mac_async_device *const dev, void *const hw)
