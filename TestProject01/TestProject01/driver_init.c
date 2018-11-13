@@ -62,7 +62,7 @@ void USART_0_init(void)
 void MACIF_PORT_init(void)
 {
 
-	gpio_set_pin_function(PA16, PINMUX_PA16L_GMAC_GCRS);
+	//gpio_set_pin_function(PA16, PINMUX_PA16L_GMAC_GCRS);
 
 	gpio_set_pin_function(PB14, PINMUX_PB14L_GMAC_GMDC);
 
